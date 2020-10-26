@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Page Auteur</title>
+  </head>
+  <body>
+    <h1>Page Auteur</h1></br>
+    <p> Voici la page de <%=params[:first_name]%></p>
+    <p>Nom de famille :   <%= User.where(first_name: params[:first_name]).first.last_name%></p>
+    <p>Description : <%= User.where(first_name: params[:first_name]).first.description%></p>
+    <p>Email : <%= User.where(first_name: params[:first_name]).first.email%></p>
+    <p>Age: <%= User.where(first_name: params[:first_name]).first.age %></p>
+    <p>Ville : <%= User.where(first_name: params[:first_name]).first.city.name %></p>
+    
+  </body>
+</html>

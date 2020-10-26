@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h1>The Gossip Project</h1>
+
+    <p>BIENVENUE <%= params[:first_name]%> ! </p>
+    <div class="row justify-content-md-center">
+    <% @gossips.each_with_index do |gossip, index| %>
+    </br>
+    <div class="card m-4" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <p class="card-text"><%= gossip.user.first_name %></p>
+        <p class="btn btn-light"> <%= link_to "Lien vers le gossip", dynamic_pages_show_path(index+1) %></p>
+        </div>
+    </div>
+    <% end %>
+    </div>
+</div>

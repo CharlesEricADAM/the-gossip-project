@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Page Potin</title>
+  </head>
+  <body>
+    <h1>Page Potin</h1>
+    <p> Voici la page du potin n°<%=params['id']%></p>
+    <p>Son auteur :   <%= link_to Gossip.find(params['id']).user.first_name, dynamic_pages_profile_path(Gossip.find(params['id']).user.first_name) %></p>  
+    <p>Le titre du potin: <%= Gossip.find(params['id']).title %></p>
+    <p>Le contenu du potin: <%= Gossip.find(params['id']).content %></p>
+    <p>Créé le: <%= Gossip.find(params['id']).created_at %></p>
+    
+  </body>
+</html>
